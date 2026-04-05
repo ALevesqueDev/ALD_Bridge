@@ -1,0 +1,1 @@
+-- [stub] QBCore server-side adapter — implemented in feature/server-bridge

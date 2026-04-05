@@ -1,0 +1,1 @@
+-- [stub] ESX client-side adapter — implemented in feature/client-bridge
