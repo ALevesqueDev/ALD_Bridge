@@ -1,0 +1,1 @@
+-- [stub] ESX server-side adapter — implemented in feature/server-bridge
