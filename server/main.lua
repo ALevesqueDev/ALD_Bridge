@@ -23,18 +23,23 @@ local function DetectFramework()
         ALD.Framework = 'qb'
 
     elseif Config.Framework == 'auto' then
-        -- Check ESX first, then QBCore
+        -- Check ESX first, then QBCore variants (qb-core and qbx_core)
         if GetResourceState('es_extended') == 'started' then
             ALD.Framework = 'esx'
 
         elseif GetResourceState('qb-core') == 'started' then
+            -- Standard QBCore
+            ALD.Framework = 'qb'
+
+        elseif GetResourceState('qbx_core') == 'started' then
+            -- Qbox (QBCore fork — shares the same API via its bridge)
             ALD.Framework = 'qb'
 
         else
             -- Neither found — bridge cannot function
             ALD.Framework = nil
             print('^1[ALD_Bridge] ERROR: No supported framework detected.')
-            print('^1[ALD_Bridge] Make sure es_extended or qb-core is started BEFORE ALD_Bridge.')
+            print('^1[ALD_Bridge] Make sure es_extended, qb-core, or qbx_core is started BEFORE ALD_Bridge.')
             print('^1[ALD_Bridge] Or set Config.Framework manually to "esx" or "qb" in config/config.lua.^7')
             return
         end
