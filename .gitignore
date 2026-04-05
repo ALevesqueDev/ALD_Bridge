@@ -1,0 +1,23 @@
+# AI Specification (private — not for distribution)
+ia/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
+
+# Node (if tooling is ever added)
+node_modules/
